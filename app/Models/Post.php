@@ -7,13 +7,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Storage;
-use Spatie\MediaLibrary\HasMedia;
-use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
-class Post extends Model implements HasMedia
+class Post extends Model
 {
-    use HasFactory, HasFilter, SoftDeletes, InteractsWithMedia;
+    use HasFactory, HasFilter, SoftDeletes;
 
     protected $table = 'posts';
 
@@ -41,12 +39,6 @@ class Post extends Model implements HasMedia
         'news_type'
 
     ];
-
-    public function registerMediaConversions(Media $media = null): void
-    {
-        $this->addMediaConversion('thumb')
-            ->width(600);
-    }
 
 
     public function getImageUrlAttribute(): ?string
