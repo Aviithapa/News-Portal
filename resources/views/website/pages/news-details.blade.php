@@ -55,7 +55,7 @@
                             </div>
                             <div class="blog-content">
                                 <div class="blog-info-wrap">
-                                    <button class="blog-info print_btn">
+                                    {{-- <button class="blog-info print_btn">
                                         Print :
                                         <i class="fas fa-print"></i>
                                     </button>
@@ -65,7 +65,7 @@
                                     </a>
                                     <button class="blog-info ms-sm-auto">15k <i class="fas fa-thumbs-up"></i></button>
                                     <span class="blog-info">126k <i class="fas fa-eye"></i></span>
-                                    <span class="blog-info">12k <i class="fas fa-share-nodes"></i></span>
+                                    <span class="blog-info">12k <i class="fas fa-share-nodes"></i></span> --}}
                                 </div>
                                 <div class="content">
                                     {!! $newsDetails->content !!}
@@ -74,14 +74,14 @@
                                     <h6 class="title">Related Tag :</h6>
                                     <div class="tagcloud">
                                             @foreach($newsDetails->categories as $category)
-                                                 <a href="">{{ $category->name_nepali }}</a>
+                                                 <a href="{{ url('news-list/category/'. $category->id) }}">{{ $category->name_nepali }}</a>
                                             @endforeach
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="blog-navigation">
+                    {{-- <div class="blog-navigation">
                         <div class="nav-btn prev">
                             <div class="img">
                                 <img src="assets/img/blog/blog-nav-1.jpg" alt="blog img" class="nav-img">
@@ -125,7 +125,7 @@
                             </div>
                             <p class="author-text">Adventurer and passionate travel blogger. With a backpack full of stories and a camera in hand, she takes her readers on exhilarating journeys around the world.</p>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="related-post-wrapper pt-30 mb-30">
                         <div class="row align-items-center">
                             <div class="col">
@@ -153,8 +153,8 @@
                                     </div>
                                     <h3 class="box-title-22"><a class="hover-line" href="{{ url('news-details/'. $post->id) }}">{{ $post->title }}</a></h3>
                                     <div class="blog-meta">
-                                        <a href="author.html"><i class="far fa-user"></i>By - Tnews</a>
-                                        <a href="blog.html"><i class="fal fa-calendar-days"></i>
+                                        <a href="#"><i class="far fa-user"></i>By - Shree Bindu</a>
+                                        <a href="#"><i class="fal fa-calendar-days"></i>
                                          {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $post->created_at)->format('d M, Y') }}
                                         </a>
                                     </div>

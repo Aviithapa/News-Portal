@@ -6,14 +6,16 @@
                         <div class="widget footer-widget">
                             <div class="th-widget-about">
                                 <div class="about-logo">
-                                    <a href="home-newspaper.html"><img src="assets/img/logo-footer.svg" alt="Tnews"></a>
+                                     <img class="light-img" src="{{ getSiteSetting('logo_image') }}"  alt={{ getSiteSetting('site_title') }} style="height:100px"/>
+
                                 </div>
-                                <p class="about-text">Magazines cover a wide subjects, including not limited to fashion, lifestyle, health, politics, business, Entertainment, sports, science,</p>
+                                 {!! getSiteSetting('meta_description')   !!}
                                 <div class="th-social style-black">
-                                    <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a>
-                                    <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
-                                    <a href="https://www.whatsapp.com/"><i class="fab fa-whatsapp"></i></a>
+                                    <a href="{{ getSiteSetting('social_fb') }}" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="{{ getSiteSetting('social_twitter') }}" target="_blank"><i class="fab fa-twitter"></i></a>
+                                        <a href="{{ getSiteSetting('social_twitter') }}" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                        <a href="{{ getSiteSetting('social_instagram') }}" target="_blank"><i class="fab fa-instagram"></i></a>
+                                        <a href="{{ getSiteSetting('social_youtube') }}" target="_blank"><i class="fab fa-youtube"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -23,12 +25,10 @@
                             <h3 class="widget_title">Categories</h3>
                             <div class="menu-all-pages-container">
                                 <ul class="menu">
-                                    <li><a href="blog.html">Political</a></li>
-                                    <li><a href="blog.html">Business</a></li>
-                                    <li><a href="blog.html">Health</a></li>
-                                    <li><a href="blog.html">Technology</a></li>
-                                    <li><a href="blog.html">Sports</a></li>
-                                    <li><a href="blog.html">Entertainment</a></li>
+                                     @foreach($categories as $category)
+                                  <li><a href="">{{ $category->name_nepali }}</a></li>
+                                @endforeach
+                                   
                                 </ul>
                             </div>
                         </div>
@@ -79,7 +79,7 @@
             <div class="container">
                 <div class="row jusity-content-between align-items-center">
                     <div class="col-lg-5">
-                        <p class="copyright-text">Copyright <i class="fal fa-copyright"></i> 2023 <a href="home-newspaper.html">News</a>. All Rights Reserved.</p>
+                        <p class="copyright-text">Copyright <i class="fal fa-copyright"></i> 2024 <a href="{{ url('/') }}">{{ getSiteSetting('site_title') }}</a>. All Rights Reserved.</p>
                     </div>
                     <div class="col-lg-auto ms-auto d-none d-lg-block">
                         <div class="footer-links">

@@ -296,7 +296,7 @@
         <div class="mobile-logo">
            @if(getSiteSetting('logo_image') !== null)
                <a href="{{ url('/') }}">
-                  <img class="light-img" src="{{ getSiteSetting('logo_image') }}"  alt={{ getSiteSetting('site_title') }} alt="logo" style="height: 60px;"/>
+                  <img class="light-img" src="{{ getSiteSetting('logo_image') }}"  alt="{{ getSiteSetting('site_title') }}" alt="logo" style="height: 60px;"/>
                </a>
             @else
                  <h5 class="company-name">
@@ -310,20 +310,13 @@
                                     <li class="">
                                         <a href="{{ url('/') }}">Home</a>
                                     </li>
-                                    <li><a href="{{ url('/about') }}">About Us</a></li>
-                                    <li class="">
-                                        <a href="#">Category</a>
-                                    </li>
-                                    <li class="">
-                                        <a href="#">Pages</a>
-                                    </li>
-                                    <li class="">
-                                        <a href="#">Blog</a>
-                                        
-                                    </li>
-                                    <li>
-                                        <a href="contact.html">Contact</a>
-                                    </li>
+                                    @if(isset($menu))
+                                        @foreach($menu  as $me)
+                                           <li><a href="{{ url('/about') }}">$me->name_nepali</a></li>
+                                       @endforeach
+                                    @endif
+                                    
+                                     
                                 </ul>
         </div>
       </div>
@@ -338,8 +331,8 @@
                         <div class="header-links">
                             <ul>
                                 <li><i class="fal fa-calendar-days"></i><a href="#"><?php echo date('d F, Y'); ?></a></li>
-                                <li><a href="{{ url('privacy') }}">Privacy Policy</a></li>
-                                <li><a href="{{ url('terms-and-conditions') }}">Terms & Conditions</a></li>
+                                {{-- <li><a href="{{ url('privacy') }}">Privacy Policy</a></li>
+                                <li><a href="{{ url('terms-and-conditions') }}">Terms & Conditions</a></li> --}}
                                 
                             </ul>
                         </div>
@@ -362,16 +355,16 @@
                 </div>
             </div>
         </div>
-        <div class="header-middle">
-            <div class="container">
+        <div class="header-middle" style="padding: 0px; height:120px !important;">
+            <div class="container"  style="display: flex; justify-content:center;">
                 <div class="row justify-content-center justify-content-lg-between align-items-center">
                     <div class="col-auto d-none d-lg-block">
                         <div class="col-auto">
                             <div class="header-logo">
                                 @if(getSiteSetting('logo_image') !== null)
-                                <a href="{{ url('/') }}">
+                                <a href="{{ url('/') }}" style="justify-content:center;">
 
-                                   <img class="light-img" src="{{ getSiteSetting('logo_image') }}"  alt={{ getSiteSetting('site_title') }} alt="logo" style="height: 60px;"/>
+                                   <img class="light-img" src="{{ getSiteSetting('logo_image') }}"  alt={{ getSiteSetting('site_title') }} alt="logo" style="height: 130px; "/>
 
                                 </a>
                                 @else
@@ -420,20 +413,13 @@
                                     <li class="">
                                         <a href="{{ url('/') }}">Home</a>
                                     </li>
-                                    <li><a href="{{ url('/about') }}">About Us</a></li>
-                                    <li class="">
-                                        <a href="#">Category</a>
-                                    </li>
-                                    <li class="">
-                                        <a href="#">Pages</a>
-                                    </li>
-                                    <li class="">
-                                        <a href="#">Blog</a>
-                                        
-                                    </li>
-                                    <li>
-                                        <a href="contact.html">Contact</a>
-                                    </li>
+                                      @if(isset($menu))
+                                        @foreach($menu  as $me)
+                                           <li><a href="{{ url('/news-list/category/' .$me->id) }}">{{$me->name}}</a></li>
+                                       @endforeach
+                                    @endif
+                                     
+                                    
                                 </ul>
                             </nav>
                         </div>

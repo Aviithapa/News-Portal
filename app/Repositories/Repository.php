@@ -35,7 +35,7 @@ class Repository implements RepositoryInterface
      */
     public function all(array $columns = array('*')): Collection
     {
-        return $this->model->all();
+        return $this->model->orderBy('created_at', 'desc')->get($columns);
     }
 
     /**
@@ -124,7 +124,7 @@ class Repository implements RepositoryInterface
      */
     public function findBy($attribute, $value, array $columns = array('*')): ?object
     {
-        return $this->model->where($attribute, '=', $value)->first($columns);
+        return $this->model->where($attribute, '=', $value)->orderBy('created_at', 'desc')->first($columns);
     }
 
     /**
@@ -137,7 +137,7 @@ class Repository implements RepositoryInterface
      */
     public function getPaginatedList(Request $request, $type, array $columns = array('*'))
     {
-        return $this->model->where('type', '=', $type)->paginate();
+        return $this->model->where('type', '=', $type)->orderBy('created_at', 'desc')->paginate();
     }
 
     /**
@@ -169,9 +169,9 @@ class Repository implements RepositoryInterface
     public function findByWithPagination($key, $value, $operator = '=', $paginate = true, $length = 10)
     {
         if ($paginate) {
-            return $this->model->where($key, $operator, $value)->paginate($length);
+            return $this->model->where($key, $operator, $value)->orderBy('created_at', 'desc')->paginate($length);
         } else {
-            return $this->model->where($key, $operator, $value)->get();
+            return $this->model->where($key, $operator, $value)->orderBy('created_at', 'desc')->get();
         }
     }
 }

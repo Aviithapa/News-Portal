@@ -43,6 +43,7 @@
                                                             <th>Name Nepali</th>
                                                             <th>Sub Category</th>
                                                             <th>Featured in Home Page</th>
+                                                            <th>Featured in Menu Bar</th>
                                                             <th>Edit</th>
                                                         </tr>
                                                     </thead>
@@ -61,6 +62,10 @@
                                                              <td>
                                                                 <input type="checkbox" class="form-check-input toggle-checkbox" data-id="{{ $data->id }}" data-attribute="is_active_to_home" {{ $data->is_active_to_home ? 'checked' : '' }}>
                                                             </td>
+                                                             <td>
+                                                                <input type="checkbox" class="form-check-input toggle-checkbox" data-id="{{ $data->id }}" data-attribute="is_show_to_menu" {{ $data->is_show_to_menu ? 'checked' : '' }}>
+                                                            </td>
+
 
                                                            
                                                             <td><a href="{{ route('category.edit', ['category' => $data->id]) }}"><span class="badge bg-info-subtle text-info">Edit</span></a>

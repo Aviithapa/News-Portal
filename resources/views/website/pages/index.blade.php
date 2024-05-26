@@ -28,19 +28,19 @@ Blog Area
                         />
                   </div>
                   <div class="blog-content">
-                   @foreach($iTN->categories as $category)
+                   {{-- @foreach($iTN->categories as $category)
                      <a data-theme-color="{{ $category->color }}" href="{{ url('news-list/category/'. $category->id) }}" class="category">{{ $category->name }}</a>
-                  @endforeach
+                  @endforeach --}}
                     <h3 class="box-title-22">
                       <a class="hover-line" href="{{ url('news-details/' . $iTN->id)  }}"
                         >{{ $iTN->title }}</a
                       >
                     </h3>
                     <div class="blog-meta">
-                      <a href="author.html"
-                        ><i class="far fa-user"></i>By - Tnews</a
+                      <a href="#"
+                        ><i class="far fa-user"></i>By - Shree Bindu</a
                       >
-                      <a href="blog.html"
+                      <a href="#"
                         ><i class="fal fa-calendar-days"></i>
                             {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $iTN->created_at)->format('d M, Y') }}
                         </a
@@ -61,9 +61,9 @@ Blog Area
                   <img src="{{ $isFeaturedPost->getImageUrlAttribute() }}" alt="blog image"  style="object-fit: contain; width: 100%; height: 100%;" />
                 </div>
                 <div class="blog-content">
-                  @foreach($isFeaturedPost->categories as $category)
-                      <a data-theme-color="{{ $category->color }}" href="blog.html" class="category">{{ $category->name }}</a>
-                  @endforeach
+                  {{-- @foreach($isFeaturedPost->categories as $category)
+                      <a data-theme-color="{{ $category->color }}" href="#" class="category">{{ $category->name }}</a>
+                  @endforeach --}}
                 
                
                   <h3 class="box-title-30">
@@ -72,10 +72,10 @@ Blog Area
                     >
                   </h3>
                   <div class="blog-meta">
-                    <a href="author.html"
-                      ><i class="far fa-user"></i>By - Tnews</a
+                    <a href="#"
+                      ><i class="far fa-user"></i>By - Shree Bindu</a
                     >
-                    <a href="blog.html"
+                    <a href="#"
                       ><i class="fal fa-calendar-days"></i>
                             {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $isFeaturedPost->created_at)->format('d M, Y') }}
                       
@@ -132,16 +132,16 @@ Blog Area
                         />
                       </div>
                       <div class="blog-content">
-                       @foreach($iTP->categories as $category)
-                            <a data-theme-color="{{ $category->color }}" href="blog.html" class="category">{{ $category->name }}</a>
-                        @endforeach
+                       {{-- @foreach($iTP->categories as $category)
+                            <a data-theme-color="{{ $category->color }}" href="#" class="category">{{ $category->name }}</a>
+                        @endforeach --}}
                         <h3 class="box-title-18">
                           <a class="hover-line" href="{{ url('news-details/' . $iTP->id)  }}"
                             >{{  $iTP->title }}</a
                           >
                         </h3>
                         <div class="blog-meta">
-                          <a href="blog.html"
+                          <a href="#"
                             ><i class="fal fa-calendar-days"></i>
                             {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $iTP->created_at)->format('d M, Y') }}
                             </a
@@ -172,7 +172,7 @@ Blog Area
                       <div class="blog-content">
                         <a
                           data-theme-color="#00D084"
-                          href="blog.html"
+                          href="#"
                           class="category"
                           >Life Style</a
                         >
@@ -182,7 +182,7 @@ Blog Area
                           >
                         </h3>
                         <div class="blog-meta">
-                          <a href="blog.html"
+                          <a href="#"
                             ><i class="fal fa-calendar-days"></i>27 Mar, 2023</a
                           >
                         </div>
@@ -201,7 +201,7 @@ Blog Area
                       <div class="blog-content">
                         <a
                           data-theme-color="#4E4BD0"
-                          href="blog.html"
+                          href="#"
                           class="category"
                           >Sports</a
                         >
@@ -211,7 +211,7 @@ Blog Area
                           >
                         </h3>
                         <div class="blog-meta">
-                          <a href="blog.html"
+                          <a href="#"
                             ><i class="fal fa-calendar-days"></i>20 Mar, 2023</a
                           >
                         </div>
@@ -230,7 +230,7 @@ Blog Area
                       <div class="blog-content">
                         <a
                           data-theme-color="#868101"
-                          href="blog.html"
+                          href="#"
                           class="category"
                           >Action</a
                         >
@@ -240,7 +240,7 @@ Blog Area
                           >
                         </h3>
                         <div class="blog-meta">
-                          <a href="blog.html"
+                          <a href="#"
                             ><i class="fal fa-calendar-days"></i>15 Mar, 2023</a
                           >
                         </div>
@@ -259,7 +259,7 @@ Blog Area
                       <div class="blog-content">
                         <a
                           data-theme-color="#868101"
-                          href="blog.html"
+                          href="#"
                           class="category"
                           >Thriller</a
                         >
@@ -269,7 +269,7 @@ Blog Area
                           >
                         </h3>
                         <div class="blog-meta">
-                          <a href="blog.html"
+                          <a href="#"
                             ><i class="fal fa-calendar-days"></i>25 Mar, 2023</a
                           >
                         </div>
@@ -322,9 +322,9 @@ Blog Area
             <div class="blog-style1">
               <div class="blog-img" style="height: 200px">
                 <img src="{{ $tN->getImageUrlAttribute() }}" alt="blog image"   style="object-fit: fit; width: 100%; height: 100%;"  />
-                 @foreach($tN->categories as $category)
-                      <a data-theme-color="{{ $category->color }}" href="blog.html" class="category">{{ $category->name }}</a>
-                  @endforeach
+                 {{-- @foreach($tN->categories as $category)
+                      <a data-theme-color="{{ $category->color }}" href="#" class="category">{{ $category->name }}</a>
+                  @endforeach --}}
               </div>
               <h3 class="box-title-22">
                 <a class="hover-line" href="{{ url('news-details/' . $tN->id)  }}"
@@ -332,8 +332,8 @@ Blog Area
                 >
               </h3>
               <div class="blog-meta">
-                <a href="author.html"><i class="far fa-user"></i>By - Tnews</a>
-                <a href="blog.html"
+                <a href="#"><i class="far fa-user"></i>By - Shree Bindu</a>
+                <a href="#"
                   ><i class="fal fa-calendar-days"></i>
                   {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $iTP->created_at)->format('d M, Y') }}
                   </a
@@ -362,7 +362,7 @@ Blog Area
                     <img src="assets/img/blog/blog_4_1.jpg" alt="blog image" />
                     <a
                       data-theme-color="#FF9500"
-                      href="blog.html"
+                      href="#"
                       class="category"
                       >Politics</a
                     >
@@ -373,10 +373,10 @@ Blog Area
                     >
                   </h3>
                   <div class="blog-meta">
-                    <a href="author.html"
-                      ><i class="far fa-user"></i>By - Tnews</a
+                    <a href="#"
+                      ><i class="far fa-user"></i>By - Shree Bindu</a
                     >
-                    <a href="blog.html"
+                    <a href="#"
                       ><i class="fal fa-calendar-days"></i>25 Mar, 2023</a
                     >
                   </div>
@@ -388,7 +388,7 @@ Blog Area
                     <img src="assets/img/blog/blog_4_2.jpg" alt="blog image" />
                     <a
                       data-theme-color="#4E4BD0"
-                      href="blog.html"
+                      href="#"
                       class="category"
                       >Sports</a
                     >
@@ -399,10 +399,10 @@ Blog Area
                     >
                   </h3>
                   <div class="blog-meta">
-                    <a href="author.html"
-                      ><i class="far fa-user"></i>By - Tnews</a
+                    <a href="#"
+                      ><i class="far fa-user"></i>By - Shree Bindu</a
                     >
-                    <a href="blog.html"
+                    <a href="#"
                       ><i class="fal fa-calendar-days"></i>23 Mar, 2023</a
                     >
                   </div>
@@ -469,7 +469,7 @@ Blog Area
                       <div class="blog-content">
                         <a
                           data-theme-color="#4E4BD0"
-                          href="blog.html"
+                          href="#"
                           class="category"
                           >Sports</a
                         >
@@ -479,7 +479,7 @@ Blog Area
                           >
                         </h3>
                         <div class="blog-meta">
-                          <a href="blog.html"
+                          <a href="#"
                             ><i class="fal fa-calendar-days"></i>25 Mar, 2023</a
                           >
                         </div>
@@ -497,7 +497,7 @@ Blog Area
                       <div class="blog-content">
                         <a
                           data-theme-color="#00D084"
-                          href="blog.html"
+                          href="#"
                           class="category"
                           >Health</a
                         >
@@ -507,7 +507,7 @@ Blog Area
                           >
                         </h3>
                         <div class="blog-meta">
-                          <a href="blog.html"
+                          <a href="#"
                             ><i class="fal fa-calendar-days"></i>25 Mar, 2023</a
                           >
                         </div>
@@ -525,7 +525,7 @@ Blog Area
                       <div class="blog-content">
                         <a
                           data-theme-color="#E7473C"
-                          href="blog.html"
+                          href="#"
                           class="category"
                           >Fitness</a
                         >
@@ -535,7 +535,7 @@ Blog Area
                           >
                         </h3>
                         <div class="blog-meta">
-                          <a href="blog.html"
+                          <a href="#"
                             ><i class="fal fa-calendar-days"></i>11 Mar, 2023</a
                           >
                         </div>
@@ -563,7 +563,7 @@ Blog Area
                       <div class="blog-content">
                         <a
                           data-theme-color="#00D084"
-                          href="blog.html"
+                          href="#"
                           class="category"
                           >Health</a
                         >
@@ -573,7 +573,7 @@ Blog Area
                           >
                         </h3>
                         <div class="blog-meta">
-                          <a href="blog.html"
+                          <a href="#"
                             ><i class="fal fa-calendar-days"></i>11 Mar, 2023</a
                           >
                         </div>
@@ -591,7 +591,7 @@ Blog Area
                       <div class="blog-content">
                         <a
                           data-theme-color="#E7473C"
-                          href="blog.html"
+                          href="#"
                           class="category"
                           >Fitness</a
                         >
@@ -601,7 +601,7 @@ Blog Area
                           >
                         </h3>
                         <div class="blog-meta">
-                          <a href="blog.html"
+                          <a href="#"
                             ><i class="fal fa-calendar-days"></i>14 Mar, 2023</a
                           >
                         </div>
@@ -619,7 +619,7 @@ Blog Area
                       <div class="blog-content">
                         <a
                           data-theme-color="#59C2D6"
-                          href="blog.html"
+                          href="#"
                           class="category"
                           >Fashion</a
                         >
@@ -629,7 +629,7 @@ Blog Area
                           >
                         </h3>
                         <div class="blog-meta">
-                          <a href="blog.html"
+                          <a href="#"
                             ><i class="fal fa-calendar-days"></i>17 Mar, 2023</a
                           >
                         </div>
@@ -657,7 +657,7 @@ Blog Area
                       <div class="blog-content">
                         <a
                           data-theme-color="#E7473C"
-                          href="blog.html"
+                          href="#"
                           class="category"
                           >Fitness</a
                         >
@@ -667,7 +667,7 @@ Blog Area
                           >
                         </h3>
                         <div class="blog-meta">
-                          <a href="blog.html"
+                          <a href="#"
                             ><i class="fal fa-calendar-days"></i>26 Mar, 2023</a
                           >
                         </div>
@@ -685,7 +685,7 @@ Blog Area
                       <div class="blog-content">
                         <a
                           data-theme-color="#59C2D6"
-                          href="blog.html"
+                          href="#"
                           class="category"
                           >Fashion</a
                         >
@@ -695,7 +695,7 @@ Blog Area
                           >
                         </h3>
                         <div class="blog-meta">
-                          <a href="blog.html"
+                          <a href="#"
                             ><i class="fal fa-calendar-days"></i>24 Mar, 2023</a
                           >
                         </div>
@@ -713,7 +713,7 @@ Blog Area
                       <div class="blog-content">
                         <a
                           data-theme-color="#E8137D"
-                          href="blog.html"
+                          href="#"
                           class="category"
                           >Sports</a
                         >
@@ -723,7 +723,7 @@ Blog Area
                           >
                         </h3>
                         <div class="blog-meta">
-                          <a href="blog.html"
+                          <a href="#"
                             ><i class="fal fa-calendar-days"></i>12 Mar, 2023</a
                           >
                         </div>
@@ -761,16 +761,16 @@ Blog Area
                     ></a>
                   </div>
                   <div class="blog-content">
-                    @foreach($video->categories as $category)
-                      <a data-theme-color="{{ $category->color }}" href="blog.html" class="category">{{ $category->name }}</a>
-                   @endforeach
+                    {{-- @foreach($video->categories as $category)
+                      <a data-theme-color="{{ $category->color }}" href="#" class="category">{{ $category->name }}</a>
+                   @endforeach --}}
                     <h3 class="box-title-20">
                       <a class="hover-line" href="{{ url('news-details/' . $video->id)  }}"
                         >{{ $video->title }}</a
                       >
                     </h3>
                     <div class="blog-meta">
-                      <a href="blog.html"
+                      <a href="#"
                         ><i class="fal fa-calendar-days"></i>
                         </a
                       >
@@ -807,14 +807,14 @@ Blog Area
                     >
                   </h3>
                   <div class="blog-meta">
-                   @foreach($video->categories as $category)
-                      <a data-theme-color="{{ $category->color }}" href="blog.html" class="category">{{ $category->name }}</a>
-                   @endforeach
+                   {{-- @foreach($video->categories as $category)
+                      <a data-theme-color="{{ $category->color }}" href="#" class="category">{{ $category->name }}</a>
+                   @endforeach --}}
                     >
-                    <a href="author.html"
-                      ><i class="far fa-user"></i>By - Tnews</a
+                    <a href="#"
+                      ><i class="far fa-user"></i>By - Shree Bindu</a
                     >
-                    <a href="blog.html"
+                    <a href="#"
                       ><i class="fal fa-calendar-days"></i>
                           {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $iTP->created_at)->format('d M, Y') }}
                       </a
@@ -854,7 +854,7 @@ Blog Area
                   <div class="blog-content">
                     <a
                       data-theme-color="#007BFF"
-                      href="blog.html"
+                      href="#"
                       class="category"
                       >Travel</a
                     >
@@ -870,10 +870,10 @@ Blog Area
                       gravida sit amet felis.
                     </p>
                     <div class="blog-meta">
-                      <a href="author.html"
-                        ><i class="far fa-user"></i>By - Tnews</a
+                      <a href="#"
+                        ><i class="far fa-user"></i>By - Shree Bindu</a
                       >
-                      <a href="blog.html"
+                      <a href="#"
                         ><i class="fal fa-calendar-days"></i>15 Mar, 2023</a
                       >
                     </div>
@@ -889,7 +889,7 @@ Blog Area
                   <div class="blog-content">
                     <a
                       data-theme-color="#59C2D6"
-                      href="blog.html"
+                      href="#"
                       class="category"
                       >Fashion</a
                     >
@@ -905,10 +905,10 @@ Blog Area
                       gravida sit amet felis.
                     </p>
                     <div class="blog-meta">
-                      <a href="author.html"
-                        ><i class="far fa-user"></i>By - Tnews</a
+                      <a href="#"
+                        ><i class="far fa-user"></i>By - Shree Bindu</a
                       >
-                      <a href="blog.html"
+                      <a href="#"
                         ><i class="fal fa-calendar-days"></i>10 Mar, 2023</a
                       >
                     </div>
@@ -924,7 +924,7 @@ Blog Area
                   <div class="blog-content">
                     <a
                       data-theme-color="#FF9500"
-                      href="blog.html"
+                      href="#"
                       class="category"
                       >Politics</a
                     >
@@ -940,10 +940,10 @@ Blog Area
                       gravida sit amet felis.
                     </p>
                     <div class="blog-meta">
-                      <a href="author.html"
-                        ><i class="far fa-user"></i>By - Tnews</a
+                      <a href="#"
+                        ><i class="far fa-user"></i>By - Shree Bindu</a
                       >
-                      <a href="blog.html"
+                      <a href="#"
                         ><i class="fal fa-calendar-days"></i>11 Mar, 2023</a
                       >
                     </div>
@@ -959,7 +959,7 @@ Blog Area
                   <div class="blog-content">
                     <a
                       data-theme-color="#007BFF"
-                      href="blog.html"
+                      href="#"
                       class="category"
                       >Travel</a
                     >
@@ -975,10 +975,10 @@ Blog Area
                       gravida sit amet felis.
                     </p>
                     <div class="blog-meta">
-                      <a href="author.html"
-                        ><i class="far fa-user"></i>By - Tnews</a
+                      <a href="#"
+                        ><i class="far fa-user"></i>By - Shree Bindu</a
                       >
-                      <a href="blog.html"
+                      <a href="#"
                         ><i class="fal fa-calendar-days"></i>14 Mar, 2023</a
                       >
                     </div>
@@ -994,7 +994,7 @@ Blog Area
                   <div class="blog-content">
                     <a
                       data-theme-color="#E7473C"
-                      href="blog.html"
+                      href="#"
                       class="category"
                       >Fitness</a
                     >
@@ -1010,10 +1010,10 @@ Blog Area
                       gravida sit amet felis.
                     </p>
                     <div class="blog-meta">
-                      <a href="author.html"
-                        ><i class="far fa-user"></i>By - Tnews</a
+                      <a href="#"
+                        ><i class="far fa-user"></i>By - Shree Bindu</a
                       >
-                      <a href="blog.html"
+                      <a href="#"
                         ><i class="fal fa-calendar-days"></i>22 Mar, 2023</a
                       >
                     </div>
@@ -1110,7 +1110,7 @@ Blog Area
                         <div class="blog-content">
                           <a
                             data-theme-color="#FF9500"
-                            href="blog.html"
+                            href="#"
                             class="category"
                             >Politics</a
                           >
@@ -1120,7 +1120,7 @@ Blog Area
                             >
                           </h3>
                           <div class="blog-meta">
-                            <a href="blog.html"
+                            <a href="#"
                               ><i class="fal fa-calendar-days"></i>17 Mar,
                               2023</a
                             >
@@ -1140,7 +1140,7 @@ Blog Area
                         <div class="blog-content">
                           <a
                             data-theme-color="#007BFF"
-                            href="blog.html"
+                            href="#"
                             class="category"
                             >Travel</a
                           >
@@ -1150,7 +1150,7 @@ Blog Area
                             >
                           </h3>
                           <div class="blog-meta">
-                            <a href="blog.html"
+                            <a href="#"
                               ><i class="fal fa-calendar-days"></i>15 Mar,
                               2023</a
                             >
@@ -1170,7 +1170,7 @@ Blog Area
                         <div class="blog-content">
                           <a
                             data-theme-color="#00D084"
-                            href="blog.html"
+                            href="#"
                             class="category"
                             >Life Style</a
                           >
@@ -1180,7 +1180,7 @@ Blog Area
                             >
                           </h3>
                           <div class="blog-meta">
-                            <a href="blog.html"
+                            <a href="#"
                               ><i class="fal fa-calendar-days"></i>27 Mar,
                               2023</a
                             >
@@ -1200,7 +1200,7 @@ Blog Area
                         <div class="blog-content">
                           <a
                             data-theme-color="#4E4BD0"
-                            href="blog.html"
+                            href="#"
                             class="category"
                             >Sports</a
                           >
@@ -1210,7 +1210,7 @@ Blog Area
                             >
                           </h3>
                           <div class="blog-meta">
-                            <a href="blog.html"
+                            <a href="#"
                               ><i class="fal fa-calendar-days"></i>18 Mar,
                               2023</a
                             >
@@ -1239,7 +1239,7 @@ Blog Area
                         <div class="blog-content">
                           <a
                             data-theme-color="#007BFF"
-                            href="blog.html"
+                            href="#"
                             class="category"
                             >Travel</a
                           >
@@ -1249,7 +1249,7 @@ Blog Area
                             >
                           </h3>
                           <div class="blog-meta">
-                            <a href="blog.html"
+                            <a href="#"
                               ><i class="fal fa-calendar-days"></i>30 Mar,
                               2023</a
                             >
@@ -1269,7 +1269,7 @@ Blog Area
                         <div class="blog-content">
                           <a
                             data-theme-color="#00D084"
-                            href="blog.html"
+                            href="#"
                             class="category"
                             >Life Style</a
                           >
@@ -1279,7 +1279,7 @@ Blog Area
                             >
                           </h3>
                           <div class="blog-meta">
-                            <a href="blog.html"
+                            <a href="#"
                               ><i class="fal fa-calendar-days"></i>26 Mar,
                               2023</a
                             >
@@ -1299,7 +1299,7 @@ Blog Area
                         <div class="blog-content">
                           <a
                             data-theme-color="#4E4BD0"
-                            href="blog.html"
+                            href="#"
                             class="category"
                             >Sports</a
                           >
@@ -1309,7 +1309,7 @@ Blog Area
                             >
                           </h3>
                           <div class="blog-meta">
-                            <a href="blog.html"
+                            <a href="#"
                               ><i class="fal fa-calendar-days"></i>13 Mar,
                               2023</a
                             >
@@ -1329,7 +1329,7 @@ Blog Area
                         <div class="blog-content">
                           <a
                             data-theme-color="#868101"
-                            href="blog.html"
+                            href="#"
                             class="category"
                             >Action</a
                           >
@@ -1339,7 +1339,7 @@ Blog Area
                             >
                           </h3>
                           <div class="blog-meta">
-                            <a href="blog.html"
+                            <a href="#"
                               ><i class="fal fa-calendar-days"></i>19 Mar,
                               2023</a
                             >
@@ -1368,7 +1368,7 @@ Blog Area
                         <div class="blog-content">
                           <a
                             data-theme-color="#00D084"
-                            href="blog.html"
+                            href="#"
                             class="category"
                             >Life Style</a
                           >
@@ -1378,7 +1378,7 @@ Blog Area
                             >
                           </h3>
                           <div class="blog-meta">
-                            <a href="blog.html"
+                            <a href="#"
                               ><i class="fal fa-calendar-days"></i>29 Mar,
                               2023</a
                             >
@@ -1398,7 +1398,7 @@ Blog Area
                         <div class="blog-content">
                           <a
                             data-theme-color="#4E4BD0"
-                            href="blog.html"
+                            href="#"
                             class="category"
                             >Sports</a
                           >
@@ -1408,7 +1408,7 @@ Blog Area
                             >
                           </h3>
                           <div class="blog-meta">
-                            <a href="blog.html"
+                            <a href="#"
                               ><i class="fal fa-calendar-days"></i>29 Mar,
                               2023</a
                             >
@@ -1428,7 +1428,7 @@ Blog Area
                         <div class="blog-content">
                           <a
                             data-theme-color="#868101"
-                            href="blog.html"
+                            href="#"
                             class="category"
                             >Action</a
                           >
@@ -1438,7 +1438,7 @@ Blog Area
                             >
                           </h3>
                           <div class="blog-meta">
-                            <a href="blog.html"
+                            <a href="#"
                               ><i class="fal fa-calendar-days"></i>30 Mar,
                               2023</a
                             >
@@ -1458,7 +1458,7 @@ Blog Area
                         <div class="blog-content">
                           <a
                             data-theme-color="#868101"
-                            href="blog.html"
+                            href="#"
                             class="category"
                             >Thriller</a
                           >
@@ -1468,7 +1468,7 @@ Blog Area
                             >
                           </h3>
                           <div class="blog-meta">
-                            <a href="blog.html"
+                            <a href="#"
                               ><i class="fal fa-calendar-days"></i>30 Mar,
                               2023</a
                             >
@@ -1484,68 +1484,10 @@ Blog Area
         </div>
       </div>
     </section>
+
+     @include('website.index.category', ['model' => $featuredPosts , 'title' => "Featured Post"])
     <div class="space-bottom">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col">
-            <h2 class="sec-title has-line">Featured Post</h2>
-          </div>
-          <div class="col-auto">
-            <div class="sec-btn">
-              <div class="icon-box">
-                <button
-                  data-slick-prev="#blog-slide3"
-                  class="slick-arrow default"
-                >
-                  <i class="far fa-arrow-left"></i>
-                </button>
-                <button
-                  data-slick-next="#blog-slide3"
-                  class="slick-arrow default"
-                >
-                  <i class="far fa-arrow-right"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="row th-carousel"
-          id="blog-slide3"
-          data-slide-show="3"
-          data-lg-slide-show="2"
-          data-md-slide-show="2"
-          data-sm-slide-show="1"
-        >
-        @foreach($featuredPosts as $fP)
-          <div class="col-sm-6 col-xl-4">
-            <div class="blog-style1">
-              
-                  
-                <img src="{{ $fP->getImageUrlAttribute() }}" alt="blog image" />
-              @foreach($fP->categories as $category)
-                            <a data-theme-color="{{ $category->color }}" href="blog.html" class="category">{{ $category->name }}</a>
-                        @endforeach
-                
-              </div>
-              <h3 class="box-title-24">
-                <a class="hover-line" href="{{ url('news-details/' . $fP->id)  }}"
-                  >{{ $fP->title }}</a
-                >
-              </h3>
-              <div class="blog-meta">
-                <a href="author.html"><i class="far fa-user"></i>By - Tnews</a>
-                <a href="blog.html"
-                  ><i class="fal fa-calendar-days"></i> {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $iTP->created_at)->format('d M, Y') }}</a
-                >
-              </div>
-            </div>
-          </div>
-         @endforeach
-      
-          
-        </div>
-      </div>
+     
     </div>
                  
 @endsection

@@ -39,6 +39,7 @@ class HomeController extends BaseController
         $this->view_data['categories'] = $this->categoryRepository->all(['id', 'name', 'name_nepali']);
         $this->view_data['trendingNews'] = $this->postRepository->findByWithPagination('is_trending_news', 1,  '=', true, 10);
 
+        $this->view_data['menu'] = $this->categoryRepository->all()->where('is_show_to_menu', 1);
 
 
         if (file_exists($file_path) && $this->view_data['pageData']) {
@@ -70,6 +71,7 @@ class HomeController extends BaseController
 
     public function newsDetails($id = null)
     {
+        $this->view_data['menu'] = $this->categoryRepository->all()->where('is_show_to_menu', 1);
         $currentPost = $this->view_data['newsDetails'] = $this->postRepository->findOrFail($id);
         $categoryIds = $currentPost->categories->pluck('id');
 
@@ -86,6 +88,8 @@ class HomeController extends BaseController
 
     public function newsList($type = null, $id = null)
     {
+        $this->view_data['menu'] = $this->categoryRepository->all()->where('is_show_to_menu', 1);
+
         if ($type === 'author') {
             $this->view_data['newsDetails'] = $this->postRepository->findByWithPagination('created_by', $id, '=', true, 5);
         } else if ($type === 'category') {
@@ -100,7 +104,7 @@ class HomeController extends BaseController
     private function getRelatedPostsByCategory($categoryId)
     {
         $category = Category::with('news')->findOrFail($categoryId);
-        $relatedPosts = $category->news()->where('category_id', $categoryId)->paginate(5);
+        $relatedPosts = $category->news()->where('category_id', $categoryId)->orderBy('created_at', 'desc')->paginate(5);
         return $relatedPosts;
     }
 }

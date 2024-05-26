@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('meta_link')->nullable();
             $table->string('meta_description')->nullable();
             $table->enum('type', ['homepage_banner', 'testimonial', 'content', 'news',  'services', 'team', 'pages', 'about', 'faq', 'gallery', 'bod', 'csr', 'clients', 'facilities'])->nullable();
-            $table->string('slug')->unique();
+            $table->string('slug');
             $table->boolean('is_top_news')->default(false);
             $table->boolean('is_featured_post')->default(false);
             $table->boolean('is_top_rated')->default(false);

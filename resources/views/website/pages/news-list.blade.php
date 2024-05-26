@@ -5,8 +5,8 @@
  <div class="breadcumb-wrapper">
         <div class="container">
             <ul class="breadcumb-menu">
-                <li><a href="home-newspaper.html">Home</a></li>
-                <li>Blog Standard</li>
+                <li><a href="{{ url('/') }}">Home</a></li>
+                <li>News Details</li>
             </ul>
         </div>
     </div>
@@ -19,14 +19,11 @@
                     @foreach($newsDetails as $post)
                     <div class="th-blog blog-single has-post-thumbnail">
                         <div class="blog-img">
-                            <a href="{{ url('news-details/'. $post->id) }}"><img src="{{ $post->getImageUrlAttribute() }}" alt="Blog Image"></a>
-                            @foreach($post->categories as $category)
-                                <a data-theme-color="{{ $category->color }}" href="{{ url('news-list/category/'. $category->id) }}" class="category">{{ $category->name }}</a>
-                            @endforeach
+                            <a href="{{ url('news-details/'. $post->id) }}"><img src="{{ $post->getImageUrlAttribute() }}" alt="Blog Image" style="object-fit: contain;"></a>
                         </div>
                         <div class="blog-content">
                             <div class="blog-meta">
-                                <a class="author" href="blog.html"><i class="far fa-user"></i>By - Tnews</a>
+                                <a class="author" href="#"><i class="far fa-user"></i>By - Shree Bindu</a>
                                 <a href="#"><i class="fal fa-calendar-days"></i>{{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $post->created_at)->format('d M, Y') }}</a>
                             </div>
                             <h2 class="blog-title box-title-30"><a href="{{ url('news-details/'. $post->id) }}">{{ $post->title }}</a>
