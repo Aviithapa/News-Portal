@@ -18,5 +18,11 @@ class RolesTableSeeder extends Seeder
             ['name' => 'admin'],
             ['display_name' => 'Admin']
         );
+
+        Role::firstOrCreate(
+            ['name' => 'user'],
+            ['display_name' => 'User']
+        );
+
     }
 }

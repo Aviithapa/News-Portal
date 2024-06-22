@@ -41,48 +41,15 @@
                     </div>
                 </div>
                 @endforeach
-                <div class="recent-post">
-                    <div class="media-img">
-                        <a href="blog-details.html"><img src="assets/img/blog/recent-post-1-2.jpg" alt="Blog Image"></a>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="post-title"><a class="hover-line" href="blog-details.html">Embrace the game Ignite your sporting</a></h4>
-                        <div class="recent-post-meta">
-                            <a href="blog.html"><i class="fal fa-calendar-days"></i>22 June, 2023</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="recent-post">
-                    <div class="media-img">
-                        <a href="blog-details.html"><img src="assets/img/blog/recent-post-1-3.jpg" alt="Blog Image"></a>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="post-title"><a class="hover-line" href="blog-details.html">Revolutionizing lives Through technology</a></h4>
-                        <div class="recent-post-meta">
-                            <a href="blog.html"><i class="fal fa-calendar-days"></i>23 June, 2023</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="recent-post">
-                    <div class="media-img">
-                        <a href="blog-details.html"><img src="assets/img/blog/recent-post-1-4.jpg" alt="Blog Image"></a>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="post-title"><a class="hover-line" href="blog-details.html">Enjoy the Virtual Reality embrace the</a></h4>
-                        <div class="recent-post-meta">
-                            <a href="blog.html"><i class="fal fa-calendar-days"></i>25 June, 2023</a>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
-        <div class="widget  ">
+        {{-- <div class="widget  ">
             <div class="widget-ads">
                 <a href="https://themeforest.net/user/themeholy/portfolio">
                     <img class="w-100" src="assets/img/ads/siderbar_ads_1.jpg" alt="ads">
                 </a>
             </div>
-        </div>
+        </div> --}}
         <div class="widget widget_tag_cloud  ">
             <h3 class="widget_title">Popular Tags</h3>
             <div class="tagcloud">

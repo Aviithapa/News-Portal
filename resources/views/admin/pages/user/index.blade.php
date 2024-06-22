@@ -25,7 +25,7 @@
                                         <div class="row" style="padding: 20px 10px 0px 10px;"> 
                                             
                                             <div class="col-lg-4 col-md-4 col-sm-6"> 
-                                                <div class="mb-3">                                   
+                                                <div class="mb-3">
                                                     <input type="text" class="form-control" id="validationCustom01" placeholder="Name" name="name" value="{{ isset($request) ? $request->get('name') : '' }}">
                                                 </div>
                                             </div> 
@@ -109,7 +109,7 @@
                                                     </tbody>
                                                 </table>
                                                    <div style="padding: 10px; float:right;">
-                                                {{  $users->appends(request()->query())->links('admin.layout.pagination') }}
+                                                
                                                 </div>
                                             </div>        
                                         </div>

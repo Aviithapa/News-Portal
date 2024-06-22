@@ -27,8 +27,12 @@ class DashboardController extends Controller
                 return view('admin.dashboard.admin');
                 break;
 
+                case 'user':
+                    return view('admin.dashboard.admin');
+                    break;
+
             default:
-                return $this->view('dashboard.default');
+                return $this->view('admin.dashboard.default');
                 break;
         }
     }

@@ -15,6 +15,7 @@ use App\Services\User\UserGetter;
 use App\Services\User\UserUpdater;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 
 class UserController extends Controller
@@ -29,7 +30,7 @@ class UserController extends Controller
 
     public function index(Request $request)
     {
-        $users = $this->userRepository->getPaginatedList($request);
+        $users = $this->userRepository->all();
         $roles = Role::all();
         return view('admin.pages.user.index', compact('users', 'request', 'roles'));
     }
@@ -47,19 +48,17 @@ class UserController extends Controller
         try {
             $data['token'] = str_pad(rand(1, 9999), 4, '0', STR_PAD_LEFT);
             $role = Role::where('name', $data['role'])->first();
-            $data['password'] = $this->generateRandomAlphabeticString(8);
+            $data['password'] = 'Nepal@123';
             $data['reference'] = $data['password'];
             $data['password'] = bcrypt($data['password']);
-            $data['phone_number'] = $data['token'];
             $user = $this->userRepository->store($data);
-            if ($user == false) {
+            if ($user === false) {
                 session()->flash('danger', 'Oops! Something went wrong.');
                 return redirect()->back()->withInput();
             }
             $user->roles()->attach($role);
-            Mail::to($user->email)->send(new AdminCreateUser($user));
             session()->flash('success', 'Account has been created successfully.');
-            return redirect()->route('dashboard.user.index');
+            return redirect()->route('user.index');
         } catch (Exception $e) {
             session()->flash('danger', 'Oops! Something went wrong.');
             return redirect()->back()->withInput();
@@ -101,5 +100,30 @@ class UserController extends Controller
             session()->flash('danger', 'Oops! Something went wrong.');
             return redirect()->back()->withInput();
         }
+    }
+
+    public function passwordChangeIndex()
+    {
+        return view('admin.pages.user.change-password');
+    }
+
+    public function changePassword(Request $request)
+    {
+        $request->validate([
+            'current_password' => 'required|string',
+            'new_password' => 'required|string|min:8',
+        ]);
+
+        $user = Auth()->user();
+        if (!Hash::check($request->input('current_password'), $user->password)) {
+            session()->flash('error', 'Current password is incorrect.');
+            return redirect()->back()->withInput();
+        }
+        $data['password'] = Hash::make($request->input('new_password'));
+        $user = $this->userRepository->update($user->id, $data);
+        session()->flash('success', 'Password has been successfully changed.');
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('/login');
     }
 }

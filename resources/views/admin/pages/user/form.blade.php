@@ -32,7 +32,7 @@
                                             <div class="col-lg-6 col-md-6 col-sm-12"> 
                                                 <div class="mb-3">
                                                     <label class="form-label" for="validationCustom01">Name</label>
-                                                    <input type="text" class="form-control" placeholder="Name" name="username"  required value={{ isset($model) ? $model->username :old('name') }}>
+                                                    <input type="text" class="form-control" placeholder="Name" name="username"  required value={{ isset($model) ? $model->username :old('username') }}>
                                                       @if($errors->any())
                                                          {{ $errors->first('name') }}
                                                       @endif

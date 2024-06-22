@@ -24,6 +24,9 @@ class RedirectIfAuthenticated
                 if (Auth::user()->mainRole()->name === 'admin') {
                     return  redirect()->route('dashboard');
                 }
+                if (Auth::user()->mainRole()->name === 'user') {
+                    return  redirect()->route('dashboard');
+                }
             }
         }
 

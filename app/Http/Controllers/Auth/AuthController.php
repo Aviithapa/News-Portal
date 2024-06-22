@@ -19,7 +19,9 @@ class AuthController extends Controller
             if (Auth::user()->active()) {
                 if (Auth::user()->mainRole()->name === 'admin') {
                     return redirect()->intended('dashboard');
-                } else {
+                } else if (Auth::user()->mainRole()->name === 'user') {
+                    return redirect()->intended('dashboard');
+                }else {
                     Auth::logout();
                     return redirect()->back()->withErrors([
                         'active' => 'You must be an active user'

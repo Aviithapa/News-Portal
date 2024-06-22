@@ -69,7 +69,7 @@
 
                                                            
                                                             <td><a href="{{ route('category.edit', ['category' => $data->id]) }}"><span class="badge bg-info-subtle text-info">Edit</span></a>
-                                                               <a  data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@fat"  data-attr="{{ route('category.destroy', ['category' => $data->id]) }}" style="cursor: pointer;"><span class="badge bg-danger-subtle text-danger">Delete</span></a>                                                            </td>
+                                                              </td>
 
                                                         </tr>
                                                         @endforeach

@@ -10,6 +10,7 @@ use App\Repositories\CMS\Post\PostRepository;
 use App\Repositories\Media\MediaRepository;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class NewsController extends Controller
@@ -66,6 +67,7 @@ class NewsController extends Controller
             DB::beginTransaction();
             $data['type'] = 'news';
             $data['slug'] = generateSlug($data['title']);
+            $data['created_by'] = Auth::user()->id;
             $news = $this->postRepository->store($data);
             $news->categories()->attach($request->input('categories'));
             if ($news == false) {

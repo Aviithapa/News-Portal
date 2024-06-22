@@ -90,7 +90,7 @@
                                                             <td>{{ $data->slug }}</td>
                                                             <td>{{ $data->excerpt }}</td>
                                                             <td><a href="{{ route('page.edit', ['page' => $data->id]) }}"><span class="badge bg-info-subtle text-info">Edit</span></a>
-                                                               <a  data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@fat"  data-attr="{{ route('page.destroy', ['page' => $data->id]) }}" style="cursor: pointer;"><span class="badge bg-danger-subtle text-danger">Delete</span></a>                                                            </td>
+                                                                                                                         </td>
 
                                                         </tr>
                                                         @endforeach

@@ -45,11 +45,11 @@
                                 <div class="share-links">
                                     <span class="share-links-title">Share Post:</span>
                                     <div class="multi-social">
-                                        <a href="https://facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                                        <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
-                                        <a href="https://linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                                        <a href="https://pinterest.com/" target="_blank"><i class="fab fa-pinterest-p"></i></a>
-                                        <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                                        <a href="{{ getSiteSetting('social_fb') }}" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="{{ getSiteSetting('social_twitter') }}" target="_blank"><i class="fab fa-twitter"></i></a>
+                                        <a href="{{ getSiteSetting('social_twitter') }}" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                        <a href="{{ getSiteSetting('social_instagram') }}" target="_blank"><i class="fab fa-instagram"></i></a>
+                                        <a href="{{ getSiteSetting('social_youtube') }}" target="_blank"><i class="fab fa-youtube"></i></a>
                                     </div><!-- End Social Share -->
                                 </div>
                             </div>

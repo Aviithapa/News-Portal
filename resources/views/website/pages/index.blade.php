@@ -349,9 +349,6 @@ Blog Area
                     ></a>
                   </div>
                   <div class="blog-content">
-                    {{-- @foreach($video->categories as $category)
-                      <a data-theme-color="{{ $category->color }}" href="#" class="category">{{ $category->name }}</a>
-                   @endforeach --}}
                     <h3 class="box-title-20">
                       <a class="hover-line" href="{{ url('news-details/' . $video->id)  }}"
                         >{{ $video->title }}</a
@@ -381,6 +378,7 @@ Blog Area
             @foreach($videos as $video)
               <div class="">
                 <div class="blog-style8">
+            
                   <div class="blog-img" style="height: 500px">
                     <img src="{{ $video->getImageUrlAttribute() }}" alt="blog image"    style="object-fit: cover; width: 100%; height: 100%;" />
                     <a
