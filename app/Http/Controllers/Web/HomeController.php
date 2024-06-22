@@ -14,7 +14,9 @@ class HomeController extends BaseController
     //
 
     private $view_data;
-    private $request, $postRepository, $categoryRepository;
+    private $request;
+    private $postRepository;
+    private $categoryRepository;
 
     public function __construct(
         Request $request,
@@ -38,9 +40,8 @@ class HomeController extends BaseController
         $this->view_data['breakingNews'] = $this->postRepository->findByWithPagination('is_breaking_news', 1, '=', true, 5);
         $this->view_data['categories'] = $this->categoryRepository->all(['id', 'name', 'name_nepali']);
         $this->view_data['trendingNews'] = $this->postRepository->findByWithPagination('is_trending_news', 1,  '=', true, 10);
-
         $this->view_data['menu'] = $this->categoryRepository->all()->where('is_show_to_menu', 1);
-
+        $this->view_data['recentPostsFotter'] = $this->postRepository->getRecentPosts(2);
 
         if (file_exists($file_path) && $this->view_data['pageData']) {
             switch ($slug) {
@@ -55,6 +56,9 @@ class HomeController extends BaseController
                     $this->view_data['videos'] = $this->postRepository->findByWithPagination('news_type', 'video',  '=', true, 4);
                     $this->view_data['featuredPosts'] = $this->postRepository->findByWithPagination('is_featured_post', 1, true, 10);
                     $this->view_data['columnCategories'] = $this->categoryRepository->findByWithPagination('is_active_to_home', 1, true, 4);
+                    $this->view_data['recentPosts'] = $this->postRepository->getRecentPosts();
+                    $this->view_data['isPopularNews'] = $this->postRepository->findByWithPagination('is_popular_news', 1, true, 4);
+                    $this->view_data['internationalNews'] = Category::where('name', 'international')->orderBy('created_at', 'desc')->take(4)->get();
                     $columnNews = [];
                     foreach ($this->view_data['columnCategories'] as $category) {
                         $news = $category->news()->orderBy('created_at', 'desc')->take(4)->get(); // Assuming you have a 'news' relationship in your Category model
@@ -82,6 +86,7 @@ class HomeController extends BaseController
             ->get();
 
         $this->view_data['categories'] = $this->categoryRepository->all(['id', 'name', 'name_nepali']);
+        $this->view_data['recentPosts'] = $this->postRepository->getRecentPosts();
 
         return view('website.pages.news-details',  $this->view_data);
     }
@@ -89,7 +94,7 @@ class HomeController extends BaseController
     public function newsList($type = null, $id = null)
     {
         $this->view_data['menu'] = $this->categoryRepository->all()->where('is_show_to_menu', 1);
-
+      
         if ($type === 'author') {
             $this->view_data['newsDetails'] = $this->postRepository->findByWithPagination('created_by', $id, '=', true, 5);
         } else if ($type === 'category') {
@@ -97,7 +102,7 @@ class HomeController extends BaseController
         }
 
         $this->view_data['categories'] = $this->categoryRepository->all(['id', 'name', 'name_nepali']);
-
+        $this->view_data['recentPosts'] = $this->postRepository->getRecentPosts();
         return view('website.pages.news-list', $this->view_data);
     }
 

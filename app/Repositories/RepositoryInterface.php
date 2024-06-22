@@ -101,4 +101,15 @@ interface RepositoryInterface
      * @return \Illuminate\Database\Eloquent\Model
      */
     public function findByWithPagination($key, $value, $operator = '=', $paginate = true, $length = 10);
+
+
+        /**
+     * Get recent posts with pagination.
+     *
+     * @param Request $request
+     * @param int $limit
+     * @param array $columns
+     * @return LengthAwarePaginator
+     */
+    public function getRecentPosts( int $limit = 10, array $columns = array('*'));
 }

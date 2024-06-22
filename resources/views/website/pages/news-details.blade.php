@@ -55,17 +55,7 @@
                             </div>
                             <div class="blog-content">
                                 <div class="blog-info-wrap">
-                                    {{-- <button class="blog-info print_btn">
-                                        Print :
-                                        <i class="fas fa-print"></i>
-                                    </button>
-                                    <a class="blog-info" href="mailto:">
-                                        Email :
-                                        <i class="fas fa-envelope"></i>
-                                    </a>
-                                    <button class="blog-info ms-sm-auto">15k <i class="fas fa-thumbs-up"></i></button>
-                                    <span class="blog-info">126k <i class="fas fa-eye"></i></span>
-                                    <span class="blog-info">12k <i class="fas fa-share-nodes"></i></span> --}}
+                                   
                                 </div>
                                 <div class="content">
                                     {!! $newsDetails->content !!}
@@ -81,51 +71,7 @@
                             </div>
                         </div>
                     </div>
-                    {{-- <div class="blog-navigation">
-                        <div class="nav-btn prev">
-                            <div class="img">
-                                <img src="assets/img/blog/blog-nav-1.jpg" alt="blog img" class="nav-img">
-                            </div>
-                            <div class="media-body">
-                                <h5 class="title">
-                                    <a class="hover-line" href="blog-details.html">Game on! Embrace the spirit of sportsmanship</a>
-                                </h5>
-                                <a href="blog-details.html" class="nav-text"><i class="fas fa-arrow-left me-2"></i>Prev</a>
-                            </div>
-                        </div>
-                        <div class="divider"></div>
-                        <div class="nav-btn next">
-                            <div class="media-body">
-                                <h5 class="title">
-                                    <a class="hover-line" href="blog-details.html">Push your limits, redefine what's possible</a>
-                                </h5>
-                                <a href="blog-details.html" class="nav-text">Next<i class="fas fa-arrow-right ms-2"></i></a>
-                            </div>
-                            <div class="img">
-                                <img src="assets/img/blog/blog-nav-2.jpg" alt="blog img" class="nav-img">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="blog-author">
-                        <div class="auhtor-img">
-                            <img src="assets/img/blog/blog-author.jpg" alt="Blog Author Image">
-                        </div>
-                        <div class="media-body">
-                            <div class="author-top">
-                                <div>
-                                    <h3 class="author-name"><a class="text-inherit" href="team-details.html">Ronald Richards</a></h3>
-                                    <span class="author-desig">Founder & CEO</span>
-                                </div>
-                                <div class="social-links">
-                                    <a href="https://facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
-                                    <a href="https://linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                                    <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                            <p class="author-text">Adventurer and passionate travel blogger. With a backpack full of stories and a camera in hand, she takes her readers on exhilarating journeys around the world.</p>
-                        </div>
-                    </div> --}}
+                 
                     <div class="related-post-wrapper pt-30 mb-30">
                         <div class="row align-items-center">
                             <div class="col">
@@ -164,92 +110,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xxl-3 col-lg-4 sidebar-wrap">
-                    <aside class="sidebar-area">
-                        <div class="widget widget_search  ">
-                            <form class="search-form">
-                                <input type="text" placeholder="Enter Keyword">
-                                <button type="submit"><i class="far fa-search"></i></button>
-                            </form>
-                        </div>
-                        <div class="widget widget_categories  ">
-                            <h3 class="widget_title">Categories</h3>
-                            <ul>
-                                @foreach($newsDetails->categories as $category)
-                                <li>
-                                    <a href="">{{ $category->name_nepali }}</a>
-                                </li>
-                                @endforeach
-                            </ul>
-                        </div>
-                        <div class="widget  ">
-                            <h3 class="widget_title">Recent Posts</h3>
-                            <div class="recent-post-wrap">
-                                <div class="recent-post">
-                                    <div class="media-img">
-                                        <a href="blog-details.html"><img src="assets/img/blog/recent-post-1-1.jpg" alt="Blog Image"></a>
-                                    </div>
-                                    <div class="media-body">
-                                        <h4 class="post-title"><a class="hover-line" href="blog-details.html">Fitness: Your journey to Better, stronger you.</a></h4>
-                                        <div class="recent-post-meta">
-                                            <a href="blog.html"><i class="fal fa-calendar-days"></i>21 June, 2023</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="recent-post">
-                                    <div class="media-img">
-                                        <a href="blog-details.html"><img src="assets/img/blog/recent-post-1-2.jpg" alt="Blog Image"></a>
-                                    </div>
-                                    <div class="media-body">
-                                        <h4 class="post-title"><a class="hover-line" href="blog-details.html">Embrace the game Ignite your sporting</a></h4>
-                                        <div class="recent-post-meta">
-                                            <a href="blog.html"><i class="fal fa-calendar-days"></i>22 June, 2023</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="recent-post">
-                                    <div class="media-img">
-                                        <a href="blog-details.html"><img src="assets/img/blog/recent-post-1-3.jpg" alt="Blog Image"></a>
-                                    </div>
-                                    <div class="media-body">
-                                        <h4 class="post-title"><a class="hover-line" href="blog-details.html">Revolutionizing lives Through technology</a></h4>
-                                        <div class="recent-post-meta">
-                                            <a href="blog.html"><i class="fal fa-calendar-days"></i>23 June, 2023</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="recent-post">
-                                    <div class="media-img">
-                                        <a href="blog-details.html"><img src="assets/img/blog/recent-post-1-4.jpg" alt="Blog Image"></a>
-                                    </div>
-                                    <div class="media-body">
-                                        <h4 class="post-title"><a class="hover-line" href="blog-details.html">Enjoy the Virtual Reality embrace the</a></h4>
-                                        <div class="recent-post-meta">
-                                            <a href="blog.html"><i class="fal fa-calendar-days"></i>25 June, 2023</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="widget  ">
-                            <div class="widget-ads">
-                                <a href="https://themeforest.net/user/themeholy/portfolio">
-                                    <img class="w-100" src="assets/img/ads/siderbar_ads_1.jpg" alt="ads">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="widget widget_tag_cloud  ">
-                            <h3 class="widget_title">Popular Tags</h3>
-                            <div class="tagcloud">
-                                 @foreach($categories as $category)
-                            
-                                    <a href="">{{ $category->name_nepali }}</a>
-
-                                @endforeach
-                            </div>
-                        </div>
-                    </aside>
-                </div>
+                @include('website.layout.sidebar')
             </div>
         </div>
     </section>

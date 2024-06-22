@@ -308,11 +308,11 @@
         <div class="th-mobile-menu">
           <ul>
                                     <li class="">
-                                        <a href="{{ url('/') }}">Home</a>
+                                        <a href="{{ url('/') }}">होमपेज</a>
                                     </li>
                                     @if(isset($menu))
                                         @foreach($menu  as $me)
-                                           <li><a href="{{ url('/about') }}">$me->name_nepali</a></li>
+                                           <li><a href="{{ url('/news-list/category/' .$me->id) }}">{{$me->name_nepali}}</a></li>
                                        @endforeach
                                     @endif
                                     
@@ -356,8 +356,19 @@
             </div>
         </div>
         <div class="header-middle" style="padding: 0px; height:120px !important;">
-            <div class="container"  style="display: flex; justify-content:center;">
-                <div class="row justify-content-center justify-content-lg-between align-items-center">
+            <div class="container"  style="display: flex; justify-content:center; align-items:center;">
+                <div class="row justify-content-center justify-content-lg-between align-center">
+                  <div class="col-lg-4" style="align-content: center;">
+                    @if (getAdDetail('heading-top-left'))
+                    <div class="header-ads">
+                      <a href="{{ getAdDetail('heading-top-left') }}" target="_blank">
+                          <img class="light-img" src="{{ getAdsImage('heading-top-left') }}" alt="ads">
+                          <img class="dark-img" src="assets/img/ads/ads_banner_1_dark.jpg" alt="ads">
+                      </a>
+                  </div>
+                    @endif
+                   
+                </div>
                     <div class="col-auto d-none d-lg-block">
                         <div class="col-auto">
                             <div class="header-logo">
@@ -373,18 +384,20 @@
                                     </h5>
                                 @endif
                              
-                            
-                                {{-- <a href="{{ url('/') }}"><img class="dark-img" src="assets/img/logo-white.svg" alt="Tnews"></a> --}}
+                          
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-8 text-end">
-                        <div class="header-ads">
-                            {{-- <a href="https://themeforest.net/user/themeholy/portfolio">
-                                <img class="light-img" src="assets/img/ads/ads_banner_1.jpg" alt="ads">
-                                <img class="dark-img" src="assets/img/ads/ads_banner_1_dark.jpg" alt="ads">
-                            </a> --}}
-                        </div>
+                    <div class="col-lg-4" style="align-content: center;">
+                      
+                      @if (getAdDetail('heading-top-right'))
+                      <div class="header-ads">
+                        <a href="{{ getAdDetail('heading-top-right') }}" target="_blank">
+                            <img class="light-img" src="{{ getAdsImage('heading-top-right') }}" alt="ads">
+                            <img class="dark-img" src="assets/img/ads/ads_banner_1_dark.jpg" alt="ads">
+                        </a>
+                    </div>
+                      @endif
                     </div>
                 </div>
             </div>
@@ -411,7 +424,7 @@
                             <nav class="main-menu d-none d-lg-inline-block">
                                 <ul>
                                     <li class="">
-                                        <a href="{{ url('/') }}">Home</a>
+                                        <a href="{{ url('/') }}">होमपेज</a>
                                     </li>
                                       @if(isset($menu))
                                         @foreach($menu  as $me)

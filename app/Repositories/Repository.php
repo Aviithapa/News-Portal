@@ -174,4 +174,21 @@ class Repository implements RepositoryInterface
             return $this->model->where($key, $operator, $value)->orderBy('created_at', 'desc')->get();
         }
     }
+
+
+        /**
+     * Get recent posts with pagination.
+     *
+     * @param Request $request
+     * @param int $limit
+     * @param array $columns
+     * @return LengthAwarePaginator
+     */
+    public function getRecentPosts(int $limit = 4, array $columns = array('*'))
+    {
+        return $this->model->newQuery()
+            ->orderBy('created_at', 'desc') // Order by creation date descending
+            ->select($columns) // Select the specified columns
+            ->paginate($limit); // Paginate the results
+    }
 }

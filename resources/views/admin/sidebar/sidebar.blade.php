@@ -134,6 +134,12 @@
                             <span> Category Management </span>
                         </a>
                     </li>
+                    <li class="side-nav-item">
+                        <a href="{{ route('ads.index') }}" class="side-nav-link">
+                            <i class="bi-newspaper"></i>
+                            <span> Ads Management </span>
+                        </a>
+                    </li>
                     
                    
                      <li class="side-nav-item">

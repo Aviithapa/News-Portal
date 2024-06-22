@@ -192,3 +192,27 @@ if (!function_exists('getSiteSettingKeys')) {
         ];
     }
 }
+
+
+if (!function_exists('getAdsImage')) {
+    /**
+     * @param $name
+     * @return null
+     */
+    function getAdsImage($name)
+    {
+     return App\Models\Ad::getAdImage($name);
+    }
+}
+
+if (!function_exists('getAdDetail')) {
+    /**
+     * @param $name
+     * @return null
+     */
+    function getAdDetail($name)
+    {
+     return App\Models\Ad::getDetail($name);
+    }
+}
+

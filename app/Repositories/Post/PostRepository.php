@@ -32,4 +32,20 @@ class PostRepository extends Repository
             ->latest()
             ->paginate($limit);
     }
+
+        /**
+     * Get recent posts with pagination.
+     *
+     * @param Request $request
+     * @param int $limit
+     * @param array $columns
+     * @return LengthAwarePaginator
+     */
+    public function getRecentPosts( int $limit = 10, array $columns = array('*')): LengthAwarePaginator
+    {
+        return $this->model->newQuery()
+            ->orderBy('created_at', 'desc') // Order by creation date descending
+            ->select($columns) // Select the specified columns
+            ->paginate($limit); // Paginate the results
+    }
 }

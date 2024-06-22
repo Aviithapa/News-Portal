@@ -35,7 +35,8 @@ class Post extends Model
         'is_breaking_news',
         'is_trending_news',
         'is_top_rated',
-        'news_type'
+        'news_type',
+        'is_popular_news'
 
     ];
 

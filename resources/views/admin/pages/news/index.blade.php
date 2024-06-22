@@ -79,6 +79,7 @@
                                                             <th>Is Top Rated News</th>
                                                             <th>Is Top  News</th>
                                                             <th>Is Featured Post</th>
+                                                            <th>Is Popular News</th>
                                                             <th>Edit</th>
                                                         </tr>
                                                     </thead>
@@ -102,6 +103,10 @@
                                                             <td>
                                                                 <input type="checkbox" class="form-check-input toggle-checkbox" data-id="{{ $data->id }}" data-attribute="is_featured_post" {{ $data->is_featured_post ? 'checked' : '' }}>
                                                             </td>
+                                                            <td>
+                                                                <input type="checkbox" class="form-check-input toggle-checkbox" data-id="{{ $data->id }}" data-attribute="is_popular_news" {{ $data->is_popular_news ? 'checked' : '' }}>
+                                                            </td>
+                                                            
                                                             <td><a href="{{ route('news.edit', ['news' => $data->id]) }}"><span class="badge bg-info-subtle text-info">Edit</span></a>
                                                                <a  data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@fat"  data-attr="{{ route('news.destroy', ['news' => $data->id]) }}" style="cursor: pointer;"><span class="badge bg-danger-subtle text-danger">Delete</span></a>                                                            </td>
 

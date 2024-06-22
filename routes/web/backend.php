@@ -18,6 +18,8 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\News\NewsController;
 use App\Http\Controllers\Admin\Settings\SiteSettingController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\Ads\AdsController;
+
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth'])->name('dashboard');
 Route::resource('dashboard/user', UserController::class)->middleware(['auth']);
@@ -38,6 +40,7 @@ Route::resource('cms/facility', FacilityController::class)->middleware(['auth'])
 Route::resource('dashboard/news', NewsController::class)->middleware(['auth']);
 Route::resource('dashboard/category', CategoryController::class)->middleware(['auth']);
 Route::put('dashboard/updateCategory/{id}', [CategoryController::class, 'updateCategory'])->middleware(['auth'])->name('updateCategory');
+Route::resource('dashboard/ads', AdsController::class)->middleware(['auth']);
 
 
 Route::resource('site-settings', SiteSettingController::class, [
