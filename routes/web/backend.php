@@ -58,3 +58,4 @@ Route::resource('site-settings', SiteSettingController::class, [
 Route::post('save_image', [NewsController::class, 'save_image'])->middleware(['auth'])->name('save_images');
 Route::get('/dashboard/password/change', [UserController::class, 'passwordChangeIndex'])->middleware(['auth'])->name('password.index');
 Route::post('/dashboard/password/change', [UserController::class, 'changePassword'])->middleware(['auth'])->name('user.password.change');
+Route::post('category/update-order', [CategoryController::class, 'updateOrder'])->middleware(['auth'])->name('category.updateOrder');

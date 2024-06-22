@@ -42,6 +42,7 @@
                                                             <th>Name</th>
                                                             <th>Name Nepali</th>
                                                             <th>Sub Category</th>
+                                                            <th>Order</th>
                                                             <th>Featured in Home Page</th>
                                                             <th>Featured in Menu Bar</th>
                                                             <th>Edit</th>
@@ -58,6 +59,9 @@
                                                               @foreach($data->children as $child)
                                                                    <span class="badge bg-primary-subtle text-primary"> {{ $child->name }} </span>
                                                                 @endforeach
+                                                            </td>
+                                                            <td>
+                                                                <input type="number" name="order[{{ $data->id }}]" value="{{ $data->order }}" class="form-control category-order" data-id="{{ $data->id }}">
                                                             </td>
                                                              <td>
                                                                 <input type="checkbox" class="form-check-input toggle-checkbox" data-id="{{ $data->id }}" data-attribute="is_active_to_home" {{ $data->is_active_to_home ? 'checked' : '' }}>
@@ -146,4 +150,29 @@
         });
     });
 </script>
+
+<script>
+    $(document).ready(function(){
+        $('.category-order').on('blur', function(){
+            let id = $(this).data('id');
+            let order = $(this).val();
+    
+            $.ajax({
+                url: '{{ route('category.updateOrder') }}',
+                method: 'POST',
+                data: {
+                    _token: '{{ csrf_token() }}',
+                    id: id,
+                    order: order
+                },
+                success: function(response) {
+                    location.reload();
+                },
+                error: function(xhr) {
+                    alert('Error: ' + xhr.responseText);
+                }
+            });
+        });
+    });
+    </script>
 @endpush

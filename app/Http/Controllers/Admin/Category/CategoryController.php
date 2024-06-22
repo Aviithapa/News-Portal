@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin\Category;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Category\CreateCategoryRequest;
+use App\Models\Category;
 use App\Repositories\Category\CategoryRepository;
 use Exception;
 use Illuminate\Http\Request;
@@ -160,4 +161,41 @@ class CategoryController extends Controller
             return redirect()->back()->withInput();
         }
     }
+
+    public function updateOrder(Request $request)
+    {
+        $id = $request->input('id');
+        $newOrder = $request->input('order');
+    
+        DB::beginTransaction();
+        try {
+            $category = Category::find($id);
+            if ($category) {
+                $currentOrder = $category->order;
+    
+                // Update the order of the category
+                $category->order = $newOrder;
+                $category->save();
+    
+                // Adjust the orders of other categories
+                if ($newOrder < $currentOrder) {
+                    Category::where('order', '>=', $newOrder)
+                            ->where('order', '<', $currentOrder)
+                            ->where('id', '!=', $id)
+                            ->increment('order');
+                } elseif ($newOrder > $currentOrder) {
+                    Category::where('order', '<=', $newOrder)
+                            ->where('order', '>', $currentOrder)
+                            ->where('id', '!=', $id)
+                            ->decrement('order');
+                }
+            }
+            DB::commit();
+            return response()->json(['message' => 'Order updated successfully.']);
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return response()->json(['message' => 'Oops! Something went wrong. ' . $e->getMessage()], 500);
+        }
+    }
+    
 }

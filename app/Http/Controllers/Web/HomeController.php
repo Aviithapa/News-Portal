@@ -40,7 +40,7 @@ class HomeController extends BaseController
         $this->view_data['breakingNews'] = $this->postRepository->findByWithPagination('is_breaking_news', 1, '=', true, 5);
         $this->view_data['categories'] = $this->categoryRepository->all(['id', 'name', 'name_nepali']);
         $this->view_data['trendingNews'] = $this->postRepository->findByWithPagination('is_trending_news', 1,  '=', true, 10);
-        $this->view_data['menu'] = $this->categoryRepository->all()->where('is_show_to_menu', 1);
+        $this->view_data['menu'] = Category::where('is_show_to_menu', 1)->orderBy('order')->get();
         $this->view_data['recentPostsFotter'] = $this->postRepository->getRecentPosts(2);
 
         if (file_exists($file_path) && $this->view_data['pageData']) {
@@ -75,7 +75,7 @@ class HomeController extends BaseController
 
     public function newsDetails($id = null)
     {
-        $this->view_data['menu'] = $this->categoryRepository->all()->where('is_show_to_menu', 1);
+        $this->view_data['menu'] = Category::where('is_show_to_menu', 1)->orderBy('order')->get();
         $currentPost = $this->view_data['newsDetails'] = $this->postRepository->findOrFail($id);
         $categoryIds = $currentPost->categories->pluck('id');
 
@@ -93,7 +93,7 @@ class HomeController extends BaseController
 
     public function newsList($type = null, $id = null)
     {
-        $this->view_data['menu'] = $this->categoryRepository->all()->where('is_show_to_menu', 1);
+        $this->view_data['menu'] = Category::where('is_show_to_menu', 1)->orderBy('order')->get();
       
         if ($type === 'author') {
             $this->view_data['newsDetails'] = $this->postRepository->findByWithPagination('created_by', $id, '=', true, 5);

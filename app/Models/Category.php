@@ -19,7 +19,8 @@ class Category extends Model
         'is_menu',
         'color',
         'is_active_to_home',
-        'is_show_to_menu'
+        'is_show_to_menu',
+        'order',
     ];
 
 
