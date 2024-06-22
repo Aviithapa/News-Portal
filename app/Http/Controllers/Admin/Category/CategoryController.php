@@ -164,6 +164,7 @@ class CategoryController extends Controller
 
     public function updateOrder(Request $request)
     {
+        if ($request->ajax()) {
         $id = $request->input('id');
         $newOrder = $request->input('order');
     
@@ -196,6 +197,7 @@ class CategoryController extends Controller
             DB::rollBack();
             return response()->json(['message' => 'Oops! Something went wrong. ' . $e->getMessage()], 500);
         }
+    }
     }
     
 }

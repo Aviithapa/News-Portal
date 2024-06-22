@@ -158,7 +158,7 @@
             let order = $(this).val();
     
             $.ajax({
-                url: '{{ route('category.updateOrder') }}',
+                url: '/category/update-order',
                 method: 'POST',
                 data: {
                     _token: '{{ csrf_token() }}',
