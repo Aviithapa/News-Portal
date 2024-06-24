@@ -76,7 +76,8 @@
                     @if (getAdDetail('heading-top-left'))
                         <div class="header-ads">
                             <a href="{{ getAdDetail('heading-top-left') }}" target="_blank">
-                                <img class="light-img" src="{{ getAdsImage('heading-top-left') }}" alt="ads">
+                                <img class="light-img" src="{{ getAdsImage('heading-top-left') }}" alt="ads"
+                                    style="height: 80px;  margin-top: 20px;">
                                 <img class="dark-img" src="assets/img/ads/ads_banner_1_dark.jpg" alt="ads">
                             </a>
                         </div>
@@ -103,7 +104,8 @@
                     @if (getAdDetail('heading-top-right'))
                         <div class="header-ads">
                             <a href="{{ getAdDetail('heading-top-right') }}" target="_blank">
-                                <img class="light-img" src="{{ getAdsImage('heading-top-right') }}" alt="ads">
+                                <img class="light-img" src="{{ getAdsImage('heading-top-right') }}" alt="ads"
+                                    style="height: 80px;  margin-top: 20px;">
                                 <img class="dark-img" src="assets/img/ads/ads_banner_1_dark.jpg" alt="ads">
                             </a>
                         </div>

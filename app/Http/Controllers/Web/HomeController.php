@@ -49,7 +49,7 @@ class HomeController extends BaseController
                     $this->view_data['banners'] = $this->postRepository->all()->where('type', 'homepage_banner');
                     $this->view_data['facilities'] = $this->postRepository->all()->where('type', 'facilities');
                     $this->view_data['services'] = $this->postRepository->all()->where('type', 'services');
-                    $this->view_data['isTopRated'] = $this->postRepository->findByWithPagination('is_top_rated', 1, '=', true, 5);
+                    $this->view_data['isTopRated'] = $this->postRepository->findByWithPagination('is_top_rated', 1, '=', true, 4);
                     $this->view_data['isFeaturedPost'] = $this->postRepository->findBy('is_featured_post', 1, ['id', 'title', 'created_at', 'image']);
                     $this->view_data['isTrendingNews'] = $this->postRepository->findByWithPagination('is_trending_news', 1,  '=', true, 2);
                     $this->view_data['trendingNews'] = $this->postRepository->findByWithPagination('is_trending_news', 1,  '=', true, 10);
@@ -94,7 +94,7 @@ class HomeController extends BaseController
     public function newsList($type = null, $id = null)
     {
         $this->view_data['menu'] = Category::where('is_show_to_menu', 1)->orderBy('order')->get();
-      
+
         if ($type === 'author') {
             $this->view_data['newsDetails'] = $this->postRepository->findByWithPagination('created_by', $id, '=', true, 5);
         } else if ($type === 'category') {
