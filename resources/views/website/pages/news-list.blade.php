@@ -5,8 +5,8 @@
  <div class="breadcumb-wrapper">
         <div class="container">
             <ul class="breadcumb-menu">
-                <li><a href="{{ url('/') }}">Home</a></li>
-                <li>News Details</li>
+                <li><a href="{{ url('/') }}">होमपेज</a></li>
+                <li>समाचार विवरण</li>
             </ul>
         </div>
     </div>
@@ -33,9 +33,6 @@
                         </div>
                     </div>
                     @endforeach
-
-               
-                      
                 </div>
                 @include('website.layout.sidebar')
             </div>
