@@ -39,12 +39,12 @@
                             <div class="recent-post-wrap">
                                 @foreach($recentPostsFotter as $rPF)
                                 <div class="recent-post">
-                                    <div class="media-img">
-                                        <a href="{{ url('news-details/' . $rPF->id)  }}"><img src="{{ $rPF->getImageUrlAttribute() }}" alt="{{$rPF->title}} "></a>
+                                    <div class="media-img" style="height: 100px;">
+                                        <a href="{{ url('news-details/' . $rPF->id)  }}"><img src="{{ $rPF->getImageUrlAttribute() }}" alt="{{$rPF->title}}" style="object-fit: contain;"></a>
                                     </div>
                                     <div class="media-body">
                                         <h4 class="post-title"><a class="hover-line" href="{{ url('news-details/' . $rPF->id)  }}">
-                                           {{$rPF->title}}
+                                           {{ truncateText($rPF->title)}}
                                         </a></h4>
                                         <div class="recent-post-meta">
                                             <a href="{{ url('news-details/' . $rPF->id)  }}"><i class="fal fa-calendar-days"></i>
@@ -54,17 +54,6 @@
                                     </div>
                                 </div>
                                 @endforeach
-                                <div class="recent-post">
-                                    <div class="media-img">
-                                        <a href="blog-details.html"><img src="assets/img/blog/recent-post-2-2.jpg" alt="Blog Image"></a>
-                                    </div>
-                                    <div class="media-body">
-                                        <h4 class="post-title"><a class="hover-line" href="blog-details.html">Key eyes on the latest update of technology</a></h4>
-                                        <div class="recent-post-meta">
-                                            <a href="blog.html"><i class="fal fa-calendar-days"></i>22 June, 2023</a>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -93,7 +82,7 @@
                                 <li><a href="{{ url('/') }}">Home</a></li>
                                 <li><a href="{{ url('/') }}">About Us</a></li>
                                 <li><a href="{{ url('/') }}">Faq</a></li>
-                                <li><a href="{{ url('/contact') }}">Contact Us</a></li>
+                                <li><a href="{{ url('/') }}">Contact Us</a></li>
                             </ul>
                         </div>
                     </div>
