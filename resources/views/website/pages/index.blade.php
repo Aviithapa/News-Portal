@@ -187,7 +187,7 @@
                             </div>
                             <h3 class="box-title-22">
                                 <a class="hover-line"
-                                    href="{{ url('news-details/' . $tN->id) }}">{{ $tN->title }}</a>
+                                    href="{{ url('news-details/' . $tN->id) }}">{{ truncateText($tN->title) }}</a>
                             </h3>
                             <div class="blog-meta">
                                 <a href="#"><i class="far fa-user"></i>By - Shree Bindu</a>

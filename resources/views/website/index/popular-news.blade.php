@@ -22,7 +22,7 @@
                 <div class="blog-content">
                   <h3 class="box-title-24">
                     <a class="hover-line" href="{{ url('news-details/' . $iPN->id)  }}"
-                      >{{$iPN->title}}</a
+                      >{{truncateText($iPN->title)}}</a
                     >
                   </h3>
                   <p class="blog-text">
