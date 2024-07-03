@@ -27,7 +27,7 @@
                                                 <div class="blog-content">
                                                     <h3 class="box-title-22">
                                                         <a class="hover-line"
-                                                            href="{{ url('news-details/' . $iTN->id) }}">{{ $iTN->title }}</a>
+                                                            href="{{ url('news-details/' . $iTN->id) }}">{{ truncateText($iTN->title) }}</a>
                                                     </h3>
                                                     <div class="blog-meta">
                                                         <a href="#"><i class="far fa-user"></i>By - Shree Bindu</a>
@@ -47,14 +47,14 @@
                             <div class="dark-theme img-overlay2">
                                 <a class="hover-line" href="{{ url('news-details/' . $isFeaturedPost->id) }}">
                                     <div class="blog-style3">
-                                        <div class="blog-img" style="height: 400px">
+                                        <div class="blog-img" style="height: 450px">
                                             <img src="{{ $isFeaturedPost->getImageUrlAttribute() }}"
                                                 alt="{{ $isFeaturedPost->title }}" style="width: 100%; height: 100%;" />
                                         </div>
                                         <div class="blog-content">
                                             <h3 class="box-title-30">
                                                 <a class="hover-line"
-                                                    href="{{ url('news-details/' . $isFeaturedPost->id) }}">{{ $isFeaturedPost->title }}</a>
+                                                    href="{{ url('news-details/' . $isFeaturedPost->id) }}">{{ truncateText($isFeaturedPost->title) }}</a>
                                             </h3>
                                             <div class="blog-meta">
                                                 <a href="#"><i class="far fa-user"></i>By - Shree Bindu</a>
@@ -106,7 +106,7 @@
                                                 <div class="blog-content">
                                                     <h3 class="box-title-18">
                                                         <a class="hover-line"
-                                                            href="{{ url('news-details/' . $iTP->id) }}">{{ $iTP->title }}</a>
+                                                            href="{{ url('news-details/' . $iTP->id) }}">{{ truncateText($iTP->title) }}</a>
                                                     </h3>
                                                     <div class="blog-meta">
                                                         <a href="#"><i class="fal fa-calendar-days"></i>
@@ -135,7 +135,7 @@
 
                                                     <h3 class="box-title-18">
                                                         <a class="hover-line"
-                                                            href="{{ url('news-details/' . $rP->id) }}">{{ $rP->title }}</a>
+                                                            href="{{ url('news-details/' . $rP->id) }}">{{ truncateText($rP->title) }}</a>
                                                     </h3>
                                                     <div class="blog-meta">
                                                         <a href="{{ url('news-details/' . $rP->id) }}"><i

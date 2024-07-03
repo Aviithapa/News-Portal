@@ -216,3 +216,22 @@ if (!function_exists('getAdDetail')) {
     }
 }
 
+
+if (!function_exists('truncateText')) {
+    /**
+     * Truncate the given title to 20 words and append ellipsis if necessary.
+     *
+     * @param string $title
+     * @param int $wordCount
+     * @return string
+     */
+    function truncateText($title, $wordCount = 5)
+    {
+        $words = explode(' ', $title);
+        if (count($words) > $wordCount) {
+            $words = array_slice($words, 0, $wordCount);
+            return implode(' ', $words) . '...';
+        }
+        return $title;
+    }
+}
