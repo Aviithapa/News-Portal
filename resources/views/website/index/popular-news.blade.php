@@ -16,7 +16,7 @@
               <a class="hover-line" href="{{ url('news-details/' . $iPN->id)  }}"
                 >
               <div class="blog-style4">
-                <div class="blog-img">
+                <div class="blog-img" style="height: 120px;">
                   <img src="{{ $iPN->getImageUrlAttribute() }}" alt={{$iPN->title}}  style="object-fit: contain;" />
                 </div>
                 <div class="blog-content">
@@ -26,7 +26,7 @@
                     >
                   </h3>
                   <p class="blog-text">
-                    {{substr($iPN->description, 0, 400) }}
+                    {!! truncateText($iPN->content, 500) !!}
                   </p>
                   <div class="blog-meta">
                     <a href="#"
@@ -74,6 +74,18 @@
                   Subscribe Now
                 </button>
               </form>
+            </div>
+
+            <div class="widget mb-30">
+              <div class="widget-ads">
+                <a href="#">
+                  <img
+                    class="w-100"
+                    src="{{ getAdsImage('popular-vertical') }}"
+                    alt="ads"
+                  />
+                </a>
+              </div>
             </div>
           </div>
         </div>
