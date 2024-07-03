@@ -127,9 +127,9 @@
                                     <div class="col-xl-12 col-md-6 border-blog">
                                         <a class="hover-line" href="{{ url('news-details/' . $rP->id) }}">
                                             <div class="blog-style2">
-                                                <div class="blog-img">
+                                                <div class="blog-img" style="height: 70px">
                                                     <img src="{{ $rP->getImageUrlAttribute() }}"
-                                                        alt="{{ $rP->title }}" />
+                                                        alt="{{ $rP->title }}" style="object-fit: contain;"  />
                                                 </div>
                                                 <div class="blog-content">
 

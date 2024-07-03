@@ -17,16 +17,16 @@
                 >
               <div class="blog-style4">
                 <div class="blog-img">
-                  <img src="{{ $iPN->getImageUrlAttribute() }}" alt={{$iPN->title}} />
+                  <img src="{{ $iPN->getImageUrlAttribute() }}" alt={{$iPN->title}}  style="object-fit: contain;" />
                 </div>
                 <div class="blog-content">
                   <h3 class="box-title-24">
                     <a class="hover-line" href="{{ url('news-details/' . $iPN->id)  }}"
-                      >{{truncateText($iPN->title)}}</a
+                      >{{$iPN->title}}</a
                     >
                   </h3>
                   <p class="blog-text">
-                    {{substr($iPN->description, 0, 200) . '...'}}
+                    {{substr($iPN->description, 0, 400) }}
                   </p>
                   <div class="blog-meta">
                     <a href="#"
