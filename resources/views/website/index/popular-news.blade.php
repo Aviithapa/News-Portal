@@ -17,7 +17,7 @@
                 >
               <div class="blog-style4">
                 <div class="blog-img" style="height: 200px;">
-                  <img src="{{ $iPN->getImageUrlAttribute() }}" alt={{$iPN->title}}  style="object-fit: contain;" />
+                  <img src="{{ $iPN->getImageUrlAttribute() }}" alt={{$iPN->title}}  style="object-fit: cover;" />
                 </div>
                 <div class="blog-content">
                   <h3 class="box-title-24">
