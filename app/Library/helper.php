@@ -225,12 +225,10 @@ if (!function_exists('truncateText')) {
      * @param int $wordCount
      * @return string
      */
-    function truncateText($title, $wordCount = 5)
+    function truncateText($title,  $charCount = 100)
     {
-        $words = explode(' ', $title);
-        if (count($words) > $wordCount) {
-            $words = array_slice($words, 0, $wordCount);
-            return implode(' ', $words) . '...';
+        if (strlen($title) > $charCount) {
+            return substr($title, 0, $charCount) . '...';
         }
         return $title;
     }
