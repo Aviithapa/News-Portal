@@ -16,7 +16,7 @@
               <a class="hover-line" href="{{ url('news-details/' . $iPN->id)  }}"
                 >
               <div class="blog-style4">
-                <div class="blog-img" style="height: 400px;">
+                <div class="blog-img" style="height: 200px;">
                   <img src="{{ $iPN->getImageUrlAttribute() }}" alt={{$iPN->title}}  style="object-fit: contain;" />
                 </div>
                 <div class="blog-content">
