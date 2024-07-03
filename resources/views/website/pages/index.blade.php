@@ -99,9 +99,9 @@
                                     <div class="col-xl-12 col-md-6 border-blog">
                                         <a class="hover-line" href="{{ url('news-details/' . $iTP->id) }}">
                                             <div class="blog-style2">
-                                                <div class="blog-img">
+                                                <div class="blog-img" style="height: 70px">
                                                     <img src="{{ $iTP->getImageUrlAttribute() }}"
-                                                        alt="{{ $iTP->title }}" />
+                                                        alt="{{ $iTP->title }}" style="object-fit: contain;" />
                                                 </div>
                                                 <div class="blog-content">
                                                     <h3 class="box-title-18">
