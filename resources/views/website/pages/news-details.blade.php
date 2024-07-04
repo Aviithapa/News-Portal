@@ -9,7 +9,7 @@
     <div class="breadcumb-wrapper">
         <div class="container">
             <ul class="breadcumb-menu">
-                <li><a href="{{ url('/') }}">Home</a></li>
+                <li><a href="{{ url('/') }}">होमपेज</a></li>
                 <li>{{ $newsDetails->title }}</li>
             </ul>
         </div>
@@ -60,6 +60,17 @@
                                 <div class="content">
                                     {!! $newsDetails->content !!}
                                 </div>
+                                <div class="widget mb-30">
+                                    <div class="widget-ads">
+                                      <a href="#">
+                                        <img
+                                          class="w-100"
+                                          src="{{ getAdsImage('details-page') }}"
+                                          alt="ads"
+                                        />
+                                      </a>
+                                    </div>
+                                  </div>
                                 <div class="blog-tag">
                                     <h6 class="title">Related Tag :</h6>
                                     <div class="tagcloud">

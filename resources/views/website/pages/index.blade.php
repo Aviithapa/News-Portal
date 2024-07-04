@@ -159,7 +159,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col">
-                    <h2 class="sec-title has-line">Trending News</h2>
+                    <h2 class="sec-title has-line">ट्रेन्डिङ समाचार</h2>
                 </div>
                 <div class="col-auto">
                     <div class="sec-btn">
@@ -210,7 +210,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
-                    <h2 class="sec-title has-line">International News</h2>
+                    <h2 class="sec-title has-line">अन्तर्राष्ट्रिय समाचार</h2>
                     <div class="row gy-4">
                         @foreach ($internationalNews as $iN)
                             <div class="col-sm-4 border-blog two-column">
