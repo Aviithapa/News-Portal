@@ -57,7 +57,7 @@ class HomeController extends BaseController
                     $this->view_data['featuredPosts'] = $this->postRepository->findByWithPagination('is_featured_post', 1, true, 10);
                     $this->view_data['columnCategories'] = $this->categoryRepository->findByWithPagination('is_active_to_home', 1, true, 4);
                     $this->view_data['recentPosts'] = $this->postRepository->getRecentPosts();
-                    $this->view_data['isPopularNews'] = $this->postRepository->findByWithPagination('is_popular_news', 1, true, 4);
+                    $this->view_data['isPopularNews'] = $this->postRepository->findByWithPagination('is_popular_news', 1, '=', true, 4);
                     $this->view_data['internationalNews'] = Category::where('name', 'international')->orderBy('created_at', 'desc')->take(4)->get();
                     $columnNews = [];
                     foreach ($this->view_data['columnCategories'] as $category) {
