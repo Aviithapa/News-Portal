@@ -62,7 +62,7 @@
                                 </div>
                                 <div class="widget mb-30">
                                     <div class="widget-ads">
-                                      <a href="#">
+                                      <a href="{{  getAdDetail('details-page') }}">
                                         <img
                                           class="w-100"
                                           src="{{ getAdsImage('details-page') }}"
@@ -102,13 +102,10 @@
                            @foreach($relatedPosts as $post)
                             <div class="col-sm-6 col-xl-4">
                                 <div class="blog-style1">
-                                    <div class="blog-img">
-                                        <img src="{{ $post->getImageUrlAttribute() }}" alt="blog image">
-                                       @foreach($post->categories as $category)
-                                                <a data-theme-color="{{ $category->color }}" href="{{ url('news-list/category/'. $category->id) }}" class="category">{{ $category->name }}</a>
-                                        @endforeach
+                                    <div class="blog-img" style="height: 125px">
+                                        <img src="{{ $post->getImageUrlAttribute() }}" alt="blog image" style="object-fit: contain;">
                                     </div>
-                                    <h3 class="box-title-22"><a class="hover-line" href="{{ url('news-details/'. $post->id) }}">{{ $post->title }}</a></h3>
+                                    <h3 class="box-title-22"><a class="hover-line" href="{{ url('news-details/'. $post->id) }}">{{ truncateText($post->title) }}</a></h3>
                                     <div class="blog-meta">
                                         <a href="#"><i class="far fa-user"></i>By - Shree Bindu</a>
                                         <a href="#"><i class="fal fa-calendar-days"></i>
