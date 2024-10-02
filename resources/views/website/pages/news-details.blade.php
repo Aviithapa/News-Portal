@@ -4,7 +4,7 @@
 <meta property="og:url" content="{{ url()->current() }}" />
 <meta property="og:type" content="article" />
 <meta property="og:title" content="{{ $newsDetails->title }}" />
-<meta property="og:description" content="{{ $newsDetails->content }}" />
+<meta property="og:description" content="{!!  $newsDetails->content  !!}" />
 <meta property="og:image" content="{{ $newsDetails->getImageUrlAttribute() }}" />
 @endpush
 @section('content')
