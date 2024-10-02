@@ -10,8 +10,11 @@
     <meta name="description" content="`{{isset($pageContent->meta_description)?$pageContent->meta_description:getSiteSetting('meta_description')}}`">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel = "icon" class="img-fluid" href ="{{ getSiteSetting('logo_image') }}" type = "image/x-icon">
-    @include('website.layout.style')
+
+   
+
     @stack('styles')
+    @include('website.layout.style')
 </head>
 <body>
     @include('website.layout.header')

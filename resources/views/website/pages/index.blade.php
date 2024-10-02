@@ -206,49 +206,14 @@
     @endforeach
 
 
-    <section class="space">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-12">
-                    <h2 class="sec-title has-line">अन्तर्राष्ट्रिय समाचार</h2>
-                    <div class="row gy-4">
-                        @foreach ($internationalNews as $iN)
-                            <div class="col-sm-4 border-blog two-column">
-                                <a class="hover-line" href="{{ url('news-details/' . $iN->id) }}">
-                                    <div class="blog-style1">
-                                        <div class="blog-img">
-                                            <img src="{{ $iN->getImageUrlAttribute() }}" alt="{{ $iN->title }}" />
-                                        </div>
-                                        <h3 class="box-title-24">
-                                            <a class="hover-line"
-                                                href="{{ url('news-details/' . $iN->id) }}">{{ $iN->title }}</a>
-                                        </h3>
-                                        <div class="blog-meta">
-                                            <a href="{{ url('news-details/' . $iN->id) }}"><i class="far fa-user"></i>By
-                                                - Shree Bindu</a>
-                                            <a href="{{ url('news-details/' . $iN->id) }}"><i
-                                                    class="fal fa-calendar-days"></i>
-                                                {{ \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $iN->created_at)->format('d M, Y') }}
-                                            </a>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-            @if (getAdDetail('above-video'))
-                <div class="header-ads" style="margin-top: 20px;">
-                    <a href="{{ getAdDetail('above-video') }}" target="_blank">
-                        <img src="{{ getAdsImage('above-video') }}" alt="ads"
-                            style="object-fit:contain; width: 100%;">
-                    </a>
-                </div>
-            @endif
+    @if (getAdDetail('above-video'))
+        <div class="header-ads" style="margin-top: 20px;">
+            <a href="{{ getAdDetail('above-video') }}" target="_blank">
+                <img src="{{ getAdsImage('above-video') }}" alt="ads"
+                    style="object-fit:contain; width: 100%;">
+            </a>
         </div>
-
-    </section>
+    @endif
 
     @if ($videos->count() > 0)
         <div class="space dark-theme bg-title-dark">

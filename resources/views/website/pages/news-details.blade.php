@@ -1,5 +1,12 @@
 @extends('website.layout.app')
 
+@push('styles')
+<meta property="og:url" content="{{ url()->current() }}" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="{{ $newsDetails->title }}" />
+<meta property="og:description" content="{{ $newsDetails->content }}" />
+<meta property="og:image" content="{{ $newsDetails->getImageUrlAttribute() }}" />
+@endpush
 @section('content')
 
 
@@ -45,11 +52,11 @@
                                 <div class="share-links">
                                     <span class="share-links-title">Share Post:</span>
                                     <div class="multi-social">
-                                        <a href="{{ getSiteSetting('social_fb') }}" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                                        <a href="{{ getSiteSetting('social_twitter') }}" target="_blank"><i class="fab fa-twitter"></i></a>
+                                        <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(url()->current()) }}" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                        {{-- <a href="{{ getSiteSetting('social_twitter') }}" target="_blank"><i class="fab fa-twitter"></i></a>
                                         <a href="{{ getSiteSetting('social_twitter') }}" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                                         <a href="{{ getSiteSetting('social_instagram') }}" target="_blank"><i class="fab fa-instagram"></i></a>
-                                        <a href="{{ getSiteSetting('social_youtube') }}" target="_blank"><i class="fab fa-youtube"></i></a>
+                                        <a href="{{ getSiteSetting('social_youtube') }}" target="_blank"><i class="fab fa-youtube"></i></a> --}}
                                     </div><!-- End Social Share -->
                                 </div>
                             </div>
